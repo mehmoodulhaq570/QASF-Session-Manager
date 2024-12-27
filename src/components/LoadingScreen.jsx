@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import qasflogo from '../assets/qasf-2.png';
 
 const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
+  const navigate = useNavigate(); // Initialize the navigate function
 
-  // Simulate the loading progress
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
@@ -16,9 +17,14 @@ const LoadingScreen = () => {
       });
     }, 30); // Update progress every 30ms (adjust speed as needed)
 
+    // Navigate to SessionsScreen when loading is complete
+    if (progress === 100) {
+      navigate('/'); // Redirect to SessionsScreen
+    }
+
     // Cleanup the interval on component unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [progress, navigate]); // Add progress and navigate to dependency array
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-300 via-blue-200 to-blue-400">
