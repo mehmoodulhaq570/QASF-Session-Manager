@@ -19,7 +19,7 @@ const LoadingScreen = () => {
 
     // Navigate to SessionsScreen when loading is complete
     if (progress === 100) {
-      navigate('/'); // Redirect to SessionsScreen
+      navigate('/sessions'); // Redirect to SessionsScreen
     }
 
     // Cleanup the interval on component unmount
