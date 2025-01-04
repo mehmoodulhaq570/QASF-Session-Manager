@@ -6,6 +6,8 @@ import AttendeeEnrollmentForm from './components/AttEnrollmentForm'; // Import A
 import AuthorEnrollmentForm from './components/AuEnrollmentForm'; // Import Author Enrollment
 import InstitutionEnrollmentForm from './components/InstEnrollmentForm'; // Import Institution Enrollment
 import TrainerEnrollmentForm from './components/TraEnrollmentForm'; // Import Trainer Enrollment
+import GAttendeLogin from './components/GAttendeLogin';
+import TrainerLogin from './components/TrainerLogin';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/author" element={<AuthorEnrollmentForm />} />
         <Route path="/institution" element={<InstitutionEnrollmentForm />} />
         <Route path="/trainer" element={<TrainerEnrollmentForm />} />
+        <Route path="/g-attende" element={<GAttendeLogin />} />
+        <Route path="/g-trainer" element={<TrainerLogin />} />
       </Routes>
     </BrowserRouter>
   );
